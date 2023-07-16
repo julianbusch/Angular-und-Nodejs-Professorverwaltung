@@ -1,5 +1,9 @@
 # Angular-und-Nodejs-Professorverwaltung
 
+to log into the application, you need these credentials:
+Login = specht
+passwort = spe
+
 
 to run this application you need to have mongodb installed, have it running on port mongodb://localhost:27017/
 and create a database named "hochschuldb" with one collection named "professor", i recommend using mongoDBcompass for this.
