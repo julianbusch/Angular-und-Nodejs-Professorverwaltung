@@ -1,0 +1,14 @@
+<h2>{{professor.vorname}} {{professor.nachname}} Details</h2>
+<div>
+    <label for="vorname">Vorname:</label>
+    <input [(ngModel)]="professor.vorname" id="vorname" placeholder="vorname">
+    <!-- <input [(ngModel)]="professor.vorname" id="vorname" placeholder="vorname" readonly="readonly"> -->
+</div>
+<div>
+    <label for="nachname">Nachname:</label>
+    <input [(ngModel)]="professor.nachname" id="nachname" placeholder="nachname" readonly="readonly">
+</div>
+<div>
+    <label for="kuerzel">Kürzel:</label>
+    <input [(ngModel)]="professor.kuerzel" id="kuerzel" placeholder="kuerzel" readonly="readonly">
+</div>

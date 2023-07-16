@@ -1,0 +1,11 @@
+<h2>Professor ändern</h2>
+<div *ngIf="professor">
+    <label for="vorname">Vorname:</label>
+    <input [(ngModel)]="professor.vorname" id="vorname" placeholder="vorname">
+    <label for="nachname">Nachname:</label>
+    <input [(ngModel)]="professor.nachname" id="nachname" placeholder="nachname">
+    <label for="kuerzel">Kürzel:</label>
+    <input [(ngModel)]="professor.kuerzel" id="kuerzel" placeholder="kuerzel" readonly="readonly">
+
+</div>
+<button *ngIf="professor" (click)="update(professor)">Speichern</button>

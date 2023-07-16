@@ -1,0 +1,41 @@
+<h2>Professor suchen</h2>
+<div>Bitte geben Sie das Suchkriterium ein:</div>
+<div>Wildcards: <b>*</b> für 0, 1 oder mehrere beliebige Zeichen, <b>?</b> für ein beliebiges Zeichen</div>
+<br/>
+<div>
+    <label>Vorname:
+<input [(ngModel)]="professor.vorname" placeholder="Vorname">
+</label>
+    <label>Nachname:
+<input [(ngModel)]="professor.nachname" placeholder="Nachname">
+</label>
+    <label>Nachname:
+<input [(ngModel)]="professor.kuerzel" placeholder="Kürzel">
+</label>
+</div>
+<button (click)="suchen()">Suchen</button>
+
+<div *ngIf="professoren">
+    <h2>Suchergebnisse</h2>
+    <table>
+        <tr>
+            <th>Nr.</th>
+            <th>Vorname</th>
+            <th>Nachname</th>
+            <th>Kürzel</th>
+        </tr>
+        <tr *ngFor="let professor of professoren; let i=index; ">
+            <td>{{i + 1}}</td>
+            <td>{{professor.vorname}}</td>
+            <td>{{professor.nachname}}</td>
+            <td>{{professor.kuerzel}}</td>
+            <button routerLink="../edit/{{professor.kuerzel}}">Ändern</button>
+            <button (click)="delete(professor)">Löschen</button>
+        </tr>
+    </table>
+</div>
+
+<p>
+    <button routerLink="../create">Erstellen</button>
+    <button routerLink="../list">Professorenliste</button>
+</p>

@@ -1,0 +1,33 @@
+<h2>Professorenliste</h2>
+<table>
+    <tr>
+        <th>Nr.</th>
+        <th>Vorname</th>
+        <th>Nachname</th>
+        <th>Kürzel</th>
+    </tr>
+    <tr *ngFor="let professor of professoren; let i=index;" (click)="selektiereProfessor(professor)">
+        <td class="{{professor == selektierterProfessor ? 'ausgewaehlt' : ''}}">{{i + 1}}</td>
+        <td class="{{professor == selektierterProfessor ? 'ausgewaehlt' :
+''}}">{{professor.vorname}}</td>
+        <td class="{{professor == selektierterProfessor ? 'ausgewaehlt' :
+''}}">{{professor.nachname}}</td>
+        <td class="{{professor == selektierterProfessor ? 'ausgewaehlt' :
+''}}">{{professor.kuerzel}}</td>
+        <button routerLink="../edit/{{professor.kuerzel}}">Ändern</button>
+        <!--   <button routerLink="/edit/{{professor.kuerzel}}">Ändern</button> -->
+        <button (click)="delete(professor)">Löschen</button>
+    </tr>
+
+</table>
+
+<p>
+
+    <button routerLink="../create">Erstellen</button>
+    <button routerLink="../find">Suchen</button>
+    <!-- <button routerLink="/create">Erstellen</button> -->
+</p>
+
+<!--  professordetails muss @Input professor haben, sonst funktioniert das binding nicht-->
+<app-ProfessorDetails [professor]="selektierterProfessor" *ngIf="selektierterProfessor">
+</app-ProfessorDetails>
