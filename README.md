@@ -4,6 +4,20 @@ to log into the application, you need these credentials:
 Login = specht
 passwort = spe
 
+to run the application you need to have node version 18.16.1 installed on your computer
+
+Step 1: check your nodejs version using node –version command. 
+
+Step 2: go to browser and search for nvm for windows. This is the nodejs version manager for windows that is a pre-requisite to download followed by installing the exe file.
+
+Step 3: Check number of node versions installed on terminal using nvm list command. 
+
+Step 4: To downgrade to any older node js version, run the following command on terminal by nvm install <version number> 
+
+Step 5: check again the number of nodejs versions are now installed using nvm list command
+
+Step 6: Final step allows you to use any older version or switch to any downgraded version using nvm use <version number> command
+
 
 to run this application you need to have mongodb installed, have it running on port mongodb://localhost:27017/
 and create a database named "hochschuldb" with one collection named "professor", i recommend using mongoDBcompass for this.
